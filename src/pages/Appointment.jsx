@@ -30,7 +30,7 @@ const Appointment = () => {
       let endTime = new Date()
       endTime.setDate(today.getDate() + i)
       endTime.setHours(21,0,0,0)
-      // setting hours
+      //setting hours
       if(today.getDate() === currentDate.getDate()){
         currentDate.setHours(currentDate.getHours() > 10? currentDate.getHours() + 1:10)
         currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0)
@@ -38,10 +38,12 @@ const Appointment = () => {
         currentDate.setHours(10)
         currentDate.setMinutes(0)
       }
+        
+
 
       let timeSlots = []
       while(currentDate < endTime) {
-        let formettedTime = currentDate.toLocaleDateString([] , {hour:'2-digit' , minute:'2-digit', })
+        let formettedTime = currentDate.toLocaleTimeString([] , {hour:'2-digit' , minute:'2-digit', })
       // add slot to array
       timeSlots.push({
         datetime: new Date(currentDate),
